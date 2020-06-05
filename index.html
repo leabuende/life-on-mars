@@ -1,0 +1,97 @@
+<head>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+</head>
+<html>
+    <body>
+        <nav>
+            <div class="navigation">
+                <a href="index.html"><p>Home</p></a>
+                <a href="insta.html"><p>Instapage</p></a>
+                <a href="weather.html"><p>Weather</p></a>
+                <a href="about.html"><p>Presentation</p></a>
+            </div>
+            <div class="design">
+                <div class="design-top"></div>
+                <div class="design-bottom"></div>
+            </div>
+        </nav>
+        <main>
+            <div class="welcome">
+                <div class="text">
+                    <h1>
+                        Welcome
+                    </h1>
+                    <p>
+                        To the first Mars robots social media. Here, you will be able to follow Opportunity, Spirit and Curiosity.
+                    </p>
+                </div>
+                
+            </div>
+            <div class="links">
+                <div class="link">
+                    <div class="flex">
+                        <div class="planet">
+                            <img class="transform"  src="./assets/planet1.png" alt="">
+                        </div>
+                    </div>
+                    <h2>Instapage</h2>
+                </div>
+                <div class="link">
+                    <div class="flex">
+    
+                        <div class="planet">
+                            <div class="img">
+                                <img class="transform" src="./assets/planet2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Weather</h2>
+                </div>
+                <div class="link">
+                    <div class="flex">
+                        <div class="planet">
+                            <img class="transform" src="./assets/planet3.png" alt="">
+                        </div>
+                    </div>
+                    <h2>Presentation</h2>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="links">
+                <a href="about.html"><p>Who are we?</p></a>
+                <i class="fab fa-github-alt"></i>
+                <i class="fab fa-linkedin-in"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+            <div class="credits">
+                <div>
+                    <p>icons by fontawesome</p>
+                    <p>credits: marguéa</p>
+                </div>
+                
+            </div>
+        </footer>
+
+        <script src="https://kit.fontawesome.com/87c3556e07.js" crossorigin="anonymous"></script>
+        <script>
+            document.querySelector('body').addEventListener('mousemove', planet);
+            function planet(){
+                var planet = document.querySelectorAll('img');
+                planet.forEach(function(planet){
+                    let x = (planet.getBoundingClientRect().left)+ (planet.clientWidth / 2);
+                    let y = (planet.getBoundingClientRect().top)+ (planet.clientHeight / 2);
+                    let radian = Math.atan2(event.pageX - x, event.pageY - y);
+                    let rot = (radian * (180/Math.PI) * -1)+0;
+                    planet.style.transform = "rotate(" + rot + "deg)";
+
+
+                })
+            }
+        </script>
+    </body>
+
+
+</html>
