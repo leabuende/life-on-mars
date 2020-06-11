@@ -2,8 +2,11 @@
     box-sizing: border-box;
     margin: 0;
 }
-body{
+.index{
     background-color: #220E57;
+}
+.insta{
+    background-color: #98C4EC;
 }
 nav{
    
@@ -66,7 +69,7 @@ nav{
 /*Main page*/
 main{
     height:100vh;
-    padding-top:50px;
+    padding-top:80px;
 }
 .welcome{
     width:100wv;
@@ -120,6 +123,7 @@ main{
     width:120px;
 }
 .planet .transform:hover{
+    transform: rotate(0deg) !important;
     top:23px;
     left:23px;
     height:100px;
@@ -127,6 +131,27 @@ main{
 }
 .flex{
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/*Weather*/
+.card{
+    margin-bottom: 20px;
+    width:300px;
+    background-color: #471B6C;
+    color: white;
+    font-family: 'Unica One', cursive;
+    text-align: center;
+    padding-top:20px;
+    padding-bottom: 20px;
+    border-radius: 15px;
+}
+.card span{
+    font-size: 30px;
+    color:#FF9200;
+}
+.row{
+    width:100vw;
     display: flex;
     justify-content: center;
 }

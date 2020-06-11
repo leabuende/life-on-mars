@@ -4,7 +4,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
 </head>
 <html>
-    <body>
+    <body class="index">
         <nav>
             <div class="navigation">
                 <a href="index.html"><p>Home</p></a>
@@ -78,6 +78,7 @@
         <script src="https://kit.fontawesome.com/87c3556e07.js" crossorigin="anonymous"></script>
         <script>
             document.querySelector('body').addEventListener('mousemove', planet);
+            document.querySelectorAll('.planet').addEventListener('mouseover', titles);
             function planet(){
                 var planet = document.querySelectorAll('img');
                 planet.forEach(function(planet){
@@ -85,11 +86,18 @@
                     let y = (planet.getBoundingClientRect().top)+ (planet.clientHeight / 2);
                     let radian = Math.atan2(event.pageX - x, event.pageY - y);
                     let rot = (radian * (180/Math.PI) * -1)+0;
-                    planet.style.transform = "rotate(" + rot + "deg)";
+                    if (planet.matches(':hover')){
 
-
+                    }else{
+                        planet.style.transform = "rotate(" + rot + "deg)";
+                    }
                 })
             }
+            function titles(){
+                var planet = document.querySelector('.planet-image');
+                planet.style 
+            }
+            
         </script>
     </body>
 
