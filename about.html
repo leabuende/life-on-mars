@@ -54,6 +54,10 @@
           display: none;
         }
       }
+      img{
+          max-width:200px;
+          height:auto;
+      }
     </style>
   </head>
   <html>
@@ -99,8 +103,8 @@
               </p>
             </div>
           </div>
-          <div class="c-image">
-            <img src="assets/curiosityRover.png" alt="curiosity Rover" />
+          <div class="c-image" id="image">
+          <!-- <img src="assets/curiosityRover.png" alt="curiosity Rover" />--> 
           </div>
         </div>
       </main>
@@ -148,6 +152,7 @@
             goals: "weather, geology, water, planetary habitability.",
             funFact:
               "it eyes capture high-resolution color pictures and videos. ",
+            src: 'assets/curiosityRover.png'
           },
           {
             name: "Opportunity",
@@ -156,6 +161,7 @@
             goals: "weather, geology, water, planetary habitability.",
             funFact:
               "it eyes capture high-resolution color pictures and videos. ",
+            src: 'assets/opportunity.png'
           },
           {
             name: "Spirit",
@@ -164,6 +170,7 @@
             goals: "weather, geology, water, planetary habitability.",
             funFact:
               "it eyes capture high-resolution color pictures and videos. ",
+              src: 'assets/spirit.png'
           },
           {
             name: "Marg",
@@ -172,6 +179,7 @@
             goals: "Co-President of Mars",
             funFact:
               "Making her cry is illegal, and one risks the death penalty for that",
+              src: 'assets/marg.png'
           },
           {
             name: "Léa",
@@ -179,6 +187,7 @@
             landingDate: "14/06/2020",
             goals: "Co-President of Mars",
             funFact: "Invetor of the first ever Mars proof strawberry cheesecake",
+            src:'assets/lea.png'
           },
         ];
         var choice = 0;
@@ -191,6 +200,7 @@
             " " + info[choice].landingDate;
           document.getElementById("goal").innerHTML = " " + info[choice].goals;
           document.getElementById("fun").innerHTML = " " + info[choice].funFact;
+          document.getElementById("image").innerHTML = "<img src='"+ info[choice].src+"'/>"
         }
         document.getElementById("next").addEventListener("click", function () {
           if (choice + 1 <= info.length) {
