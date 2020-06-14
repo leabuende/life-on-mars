@@ -1,45 +1,382 @@
 <head>
-
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
-</head>
-<html>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+      }
+      .description {
+        grid-column: 3/5;
+        grid-row: 1;
+        display: flex;
+        justify-content: center;
+      }
+      .title {
+        grid-column: 1/3;
+        grid-row: 1;
+        font-family: "Unica One", cursive;
+        color: #ff9200;
+        font-size: 30px;
+        text-align: center;
+      }
+      .one {
+        grid-column: 1/3;
+        grid-row: 2;
+      }
+      .two {
+        grid-column: 3/5;
+        grid-row: 2;
+      }
+      .post {
+        background-color: #481c6c;
+        text-align: center;
+        width: 280px;
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 30px;
+        border-radius: 15px;
+      }
+      .caption {
+        margin-top: 10px;
+        text-align: start;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 13px;
+      }
+      .caption p {
+        margin-bottom: 10px;
+      }
+      .image {
+        display: flex;
+        justify-content: center;
+      }
+      img {
+        border-radius: 15px;
+      }
+      table {
+        background-color: white;
+        width: 100%;
+        border-radius: 20px;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      tr td:nth-child(2n + 1) {
+        font-family: "Unica One", cursive;
+        color: #ff9200;
+      }
+      tr td:nth-child(1n + 2) {
+        font-size: 15px;
+        font-weight: bold;
+      }
+      input {
+        border-radius: 15px;
+        padding: 5px;
+        background-color: #481c6c;
+        border: solid 1px #98c4eb;
+      }
+      .desc {
+        background-color: #ff9200;
+        border-radius: 15px;
+        padding: 10px;
+        margin-right: 10px;
+        max-width: 280px;
+      }
+      .desc h5 {
+        font-family: "Unica One", cursive;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .desc p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        text-align: justify;
+        margin-bottom: 5px;
+        color: white;
+        font-style: italic;
+      }
+      button {
+        margin-top: 10px;
+        width: 100%;
+        border-radius: 15px;
+        padding: 7px;
+        background: rgb(131, 58, 180);
+        border: 1px solid #481c6c;
+        color: white;
+        font-family: "Unica One", cursive;
+        font-weight: bold;
+        font-size: 20px;
+        background: linear-gradient(
+          18deg,
+          rgba(131, 58, 180, 1) 0%,
+          rgba(253, 29, 29, 1) 95%,
+          rgba(252, 176, 69, 1) 100%
+        );
+      }
+      .cap {
+        margin-bottom: 10px;
+        font-size: 13px;
+      }
+      .cap span:nth-child(2n + 1) {
+        font-family: "Unica One", cursive;
+      }
+      .cap span:nth-child(1n + 2) {
+        font-style: italic;
+      }
+      .inputs {
+        display: flex;
+        justify-content: space-between;
+      }
+      .menu{
+          width:100vw;
+          text-align: center;
+          font-weight: bold;
+          font-size:25px;
+      }
+      .menu a{
+          cursor: pointer;
+      }
+      .togglenav{
+          background-color: #481c6c;
+          width:100vw;
+      }
+     
+      @media (max-width: 480px) {
+        .big-screen{
+            display: none;
+        }
+        .one {
+          grid-column: 1/5;
+          grid-row: 3;
+        }
+        .two {
+          grid-column: 1/5;
+          grid-row: 4;
+        }
+        
+        .description {
+          grid-column: 1/5;
+          grid-row: 2;
+          display: flex;
+          justify-content: center;
+        }
+        .title {
+          grid-column: 1/5;
+          grid-row: 1;
+        }
+      }
+      @media (min-width: 480px){
+          .smallscreen{
+              display: none;
+          }
+      }
+    </style>
+  </head>
+  <html>
     <body class="insta">
-        <nav>
-            <div class="navigation">
-                <a href="index.html"><p>Home</p></a>
-                <a href="insta.html"><p>Instapage</p></a>
-                <a href="weather.html"><p>Weather</p></a>
-                <a href="about.html"><p>Presentation</p></a>
+      <nav>
+        <div class="navigation big-screen">
+          <a href="index.html"><p>Home</p></a>
+          <a href="insta.html"><p>Instapage</p></a>
+          <a href="weather.html"><p>Weather</p></a>
+          <a href="about.html"><p>Presentation</p></a>
+        </div>
+  
+        <div class="navigation smallscreen">
+          <div>
+              <div class="menu">
+                  <a id="toggle" class="menu">Menu</a>
+              </div>
+            <div class="togglenav" id="menu_toggle">
+              <a href="index.html"><p>Home</p></a>
+              <a href="insta.html"><p>Instapage</p></a>
+              <a href="weather.html"><p>Weather</p></a>
+              <a href="about.html"><p>Presentation</p></a>
             </div>
-        </nav>
-        <main>
-
-        </main>
-        <footer>
-            <div class="links">
-                <a href="about.html"><p>Who are we?</p></a>
-                <i class="fab fa-github-alt"></i>
-                <i class="fab fa-linkedin-in"></i>
-                <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <div class="container">
+          <div class="title">
+            <h1>InstaMars</h1>
+          </div>
+          <div class="description">
+            <div class="desc">
+              <h5>This is Nasa's robots official facebook page!</h5>
+              <p>
+                The pictures are updated from the official NASA API. Leave a
+                comment (and be nice!)
+              </p>
             </div>
-            <div class="credits">
-                <div>
-                    <p>icons by fontawesome</p>
-                    <p>credits: marguéa</p>
+          </div>
+          <div class="image one">
+            <div class="post">
+              <div>
+                <div id="1"></div>
+                <div class="caption">
+                  <div class="cap">
+                    <span>@Curiosity </span
+                    ><span>Didn't get to move that much today.. #LazyDay</span>
+                  </div>
+                  <table id="first_table">
+                    <tbody>
+                      <tr>
+                        <td>@Blossom69xx</td>
+                        <td>Nice pic curiosity!</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="inputs">
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      size="10"
+                      id="first_name"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Leave a comment"
+                      id="first_comment"
+                      size="20"
+                    />
+                  </div>
+                  <span
+                    ><button
+                      onclick="addLine('first_name','first_comment','first_table');"
+                    >
+                      Send
+                    </button></span
+                  >
                 </div>
-                
+              </div>
             </div>
-        </footer>
-        <script src="https://kit.fontawesome.com/87c3556e07.js" crossorigin="anonymous"></script>
-        <script>
-            fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=ZXhS7tahGVhH8flMsQ0ZqNUZOvPbMSgvdZekjZM9')
-                .then(response => {
-                    return response.json()
-                })
-                .then(data => {
-
-                })
-        </script>
+          </div>
+          <div class="image two">
+            <div class="post">
+              <div>
+                <div id="2"></div>
+                <div class="caption">
+                  <div class="cap">
+                    <span>@Curiosity </span
+                    ><span>Just chillin, looking at rocks...</span>
+                  </div>
+                  <table id="second_table">
+                    <tbody>
+                      <tr>
+                        <td>@Margbayby</td>
+                        <td>Love that angle 🐥</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="inputs">
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      size="10"
+                      id="second_name"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Leave a comment"
+                      id="second_comment"
+                      size="20"
+                    />
+                  </div>
+                  <span
+                    ><button
+                      id="submit"
+                      onclick="addLine('second_name','second_comment','second_table');"
+                    >
+                      Send
+                    </button></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer-entire">
+          <div class="footer-left">
+              <a href="about.html">Who are we?</a>
+          </div>
+          <div class="footer-center">
+              <div class="github">
+                  <i class="fab fa-github-alt"></i>
+                  <a href="https://github.com/leabuende" target="_blank"><p>Léa</p></a>
+                  <a href="https://github.com/marguegue" target="_blank"><p>Margue</p></a>
+              </div>
+              <div class="linkedin">
+                  <i class="fab fa-linkedin-in"></i>
+                  <a href="https://www.linkedin.com/in/léa-anne-buende-tchiendjou-65b440174/" target="_blank"><p>Léa</p></a>
+                  <a href="https://www.linkedin.com/in/marguerite-cassier/" target="_blank"><p>Margue</p></a>
+              </div>
+          </div>
+          <div class="footer-right">
+                  <p>icons by fontawesome</p>
+                  <p>credits: marguéa</p>
+          </div>
+      </footer>
+      <script
+        src="https://kit.fontawesome.com/87c3556e07.js"
+        crossorigin="anonymous"
+      ></script>
+      <script>
+        var id = ["1", "2"];
+        fetch(
+          "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=ZXhS7tahGVhH8flMsQ0ZqNUZOvPbMSgvdZekjZM9"
+        )
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            var length = Object.keys(data)[0].length;
+  
+            console.log(Object.keys(data)[0].length);
+            data[Object.keys(data)[0]].forEach(function (element, i) {
+              console.log(element.img_src);
+              var img = document.createElement("img");
+              img.src = element.img_src;
+              console.log("hello");
+              img.style.height = "250px";
+              document.getElementById(id[i]).appendChild(img);
+              console.log(i);
+            });
+          });
+  
+        function addLine(id1, id2, table) {
+          var name = document.getElementById(id1).value;
+          var comment = document.getElementById(id2).value;
+          if (comment.length !== 0 && name.length !== 0) {
+            var tableRef = document
+              .getElementById(table)
+              .getElementsByTagName("tbody")[0];
+            var newRow = tableRef.insertRow();
+            var newCell1 = newRow.insertCell(0);
+            var newCell2 = newRow.insertCell(1);
+            newCell1.innerHTML = "@" + name;
+            newCell2.innerHTML = comment;
+          }
+        }
+  
+        var toggle = false;
+        document.getElementById('menu_toggle').style.display="none";
+        document.getElementById('toggle').addEventListener('click',function(){
+            toggle = !toggle;
+            if(toggle){
+                document.getElementById('menu_toggle').style.display="block";
+            }else{
+              document.getElementById('menu_toggle').style.display="none";
+            }
+        })
+      </script>
     </body>
-</html>
+  </html>
+  

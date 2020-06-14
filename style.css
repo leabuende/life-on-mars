@@ -2,14 +2,31 @@
     box-sizing: border-box;
     margin: 0;
 }
+.about-background{
+    background-image: url(assets/about-stars.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.weather-background{
+    background-image: url(assets/weather-stars.png);
+}
+
+.main-background{
+    background-image: url(assets/index-stars.png);
+}
+
+.insta{
+    background-image: url(assets/insta-stars.png);
+    background-color: #98C4EC;
+}
+
 .index{
     background-color: #220E57;
 }
-.insta{
-    background-color: #98C4EC;
-}
+
 nav{
-   
     width:100vw;
 }
 .navigation{
@@ -17,6 +34,7 @@ nav{
     width: 100vw;
     position: fixed;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     color:#FF9200;
     font-size: 26px;
@@ -25,10 +43,12 @@ nav{
     background-color: #471B6C;
     line-height: 70px;
 }
+
 .navigation p{
     text-align: center;
 }
 .navigation a{
+    justify-content: space-between;
     vertical-align: middle;
     text-align: center;
     font-family: 'Unica One', cursive;
@@ -41,6 +61,14 @@ nav{
 
 .navigation a:hover{
     border-bottom: 1px solid #FF9200;
+}
+
+@media (max-width: 600px){
+    .navigation{
+        font-size: 18px;
+        align-items: flex-start;
+    }
+
 }
 
 .design-top{
@@ -155,41 +183,153 @@ main{
     display: flex;
     justify-content: center;
 }
-/*Footer*/
 
-footer{
-    width:100vw;
-    height:70px;
+/*About*/
+
+.curiosity{
+    width:100wv;
+}
+
+.curiosity .text{
+    text-align: center;
+    margin-top: 100px;
+    background-color: #471B6C;
+    padding: 25px;
+    border-radius: 30px;
+    width: 400px;
+
+}
+
+.curiosity-container{
+    width: 100vw;
     display: flex;
+    justify-content: center;
+}
+
+.curiosity h1{
+    margin-top:20px;
+    font-family: 'Unica One', cursive;
+    font-size: 40px;
+    color:#FF9200;
+}
+
+.curiosity p{
+    letter-spacing: 0.1em;
+    margin-top:20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+    text-align: left;
+}
+
+.c-image img{
+    height: 250px;
+    margin-top: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*Footer*/
+/*Footer*/
+footer{
+    bottom: 0;
+}
+@media (max-height:600px){
+    footer { position: static; }
+}
+.footer-entire{
+    width:100%;
+    height:70px;
     background-color:#471B6C ;
     padding-top: 10px;
+    box-sizing: border-box;
+    text-align: left;
+    font-family: 'Unica One', cursive;
 }
-footer .links{
+.footer-entire .footer-left,
+.footer-entire .footer-center,
+.footer-entire .footer-right{
+    display: inline-block;
+    vertical-align: top;
+}
+                /* Footer left */
+.footer-entire .footer-left{
+    width: 20%;
+    align-content: stretch;
+    margin: 0;
+}
+    
+.footer-entire a{
+    display:inline-block;
     line-height:40px;
-    width:60vw;
-    margin-top:0;
-    display: flex;
-    justify-content: space-around;
-
+    text-decoration: none;
+    color:#FF9200;
+    font-size: 30px;
+    padding-left: 20px;
 }
-footer i{
+                /* Footer center */
+.footer-entire .footer-center{
+    width: 55%;
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+.footer-entire .footer-center i{
     font-size: 30px;
     color:#98C4EC;
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
     vertical-align: middle;
-    margin-top:5px;
 }
-footer a:nth-child(1){
-    font-family: 'Unica One', cursive;
-    font-size: 30px;
-    color:#FF9200;
-    text-decoration: none;
-}
-footer .credits{
-    width:40vw;
-    padding-right: 20px;
-    display: flex;
-    justify-content: flex-end;
-    color:#FF9200;
-    font-family: 'Unica One', cursive;
+.footer-entire .footer-center p{
     font-size: 20px;
+    display: block;
+    color:#FF9200;
+    vertical-align: middle;
+    margin:0;
+    margin-right: 10px;
 }
+                /* Footer right */
+.footer-entire .footer-right{
+    width: 20%;
+    color:#FF9200;
+    font-size: 20px;
+    margin: 0;
+    text-align: right;
+}
+@media (max-width: 960px) {
+    
+    .footer-entire{
+        height:100px;
+    }
+}  
+@media (max-width: 815px) {
+    
+    .footer-entire{
+        height:120px;
+    }
+}   
+@media (max-width: 730px) {
+    
+    .footer-entire{
+        height:270px;
+    }
+    .footer-entire .footer-left,
+    .footer-entire .footer-center,
+    .footer-entire .footer-right{
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+ 
+    .footer-entire .footer-center i{
+        margin-left: 0;
+    }
+ 
+}
+

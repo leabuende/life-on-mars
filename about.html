@@ -1,36 +1,209 @@
 <head>
-
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
-</head>
-<html>
-    <body class="index">
-        <nav>
-            <div class="navigation">
-                <a href="index.html"><p>Home</p></a>
-                <a href="insta.html"><p>Instapage</p></a>
-                <a href="weather.html"><p>Weather</p></a>
-                <a href="about.html"><p>Presentation</p></a>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .flex {
+        display: flex;
+      }
+      .dot {
+        margin-top: 35px;
+        height: 20px;
+        width: 20px;
+        border-right: 7px solid white;
+        border-top: 7px solid white;
+      }
+      .dot:hover {
+        cursor: pointer;
+      }
+      .dot:nth-child(n + 1) {
+        transform: rotate(225deg);
+      }
+      .dot:nth-child(n + 2) {
+        transform: rotate(45deg);
+      }
+      .menu {
+        width: 100vw;
+        text-align: center;
+        font-weight: bold;
+        font-size: 25px;
+      }
+      .menu a {
+        cursor: pointer;
+      }
+      .togglenav {
+        background-color: #481c6c;
+        width: 100vw;
+      }
+      u{
+          font-weight: bold;
+          font-style: italic;
+          color:#98C4EC;
+      }
+      @media (max-width: 480px) {
+        .big-screen {
+          display: none;
+        }
+      }
+      @media (min-width: 480px) {
+        .smallscreen {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <html>
+    <body class="index about-background">
+      <nav>
+        <div class="navigation big-screen">
+          <a href="index.html"><p>Home</p></a>
+          <a href="insta.html"><p>Instapage</p></a>
+          <a href="weather.html"><p>Weather</p></a>
+          <a href="about.html"><p>Presentation</p></a>
+        </div>
+  
+        <div class="navigation smallscreen">
+          <div>
+            <div class="menu">
+              <a id="toggle" class="menu">Menu</a>
             </div>
-        </nav>
-        <main>
-
-        </main>
-        <footer>
-            <div class="links">
-                <a href="about.html"><p>Who are we?</p></a>
-                <i class="fab fa-github-alt"></i>
-                <i class="fab fa-linkedin-in"></i>
-                <i class="fab fa-instagram"></i>
+            <div class="togglenav" id="menu_toggle">
+              <a href="index.html"><p>Home</p></a>
+              <a href="insta.html"><p>Instapage</p></a>
+              <a href="weather.html"><p>Weather</p></a>
+              <a href="about.html"><p>Presentation</p></a>
             </div>
-            <div class="credits">
-                <div>
-                    <p>icons by fontawesome</p>
-                    <p>credits: marguéa</p>
-                </div>
-                
+          </div>
+        </div>
+      </nav>
+      <style></style>
+      <main>
+        <div class="Curiosity">
+          <div class="curiosity-container">
+            <div class="text">
+              <div class="flex">
+                <div class="dot" id="prev"></div>
+                <h1 id="name" class="title"></h1>
+                <div class="dot" id="next"></div>
+              </div>
+  
+              <p>
+                <u>Mass:</u><span id="weight"></span><br />
+                <u>Landing date:</u> <span id="date"></span> <br />
+                <u>Goals:</u> <span id="goal"></span> <br />
+                <u>Funfact:</u> <span id="fun"></span>
+              </p>
             </div>
-        </footer>
-        <script src="https://kit.fontawesome.com/87c3556e07.js" crossorigin="anonymous"></script>
+          </div>
+          <div class="c-image">
+            <img src="assets/curiosityRover.png" alt="curiosity Rover" />
+          </div>
+        </div>
+      </main>
+      <footer class="footer-entire">
+          <div class="footer-left">
+              <a href="about.html">Who are we?</a>
+          </div>
+          <div class="footer-center">
+              <div class="github">
+                  <i class="fab fa-github-alt"></i>
+                  <a href="https://github.com/leabuende" target="_blank"><p>Léa</p></a>
+                  <a href="https://github.com/marguegue" target="_blank"><p>Margue</p></a>
+              </div>
+              <div class="linkedin">
+                  <i class="fab fa-linkedin-in"></i>
+                  <a href="https://www.linkedin.com/in/léa-anne-buende-tchiendjou-65b440174/" target="_blank"><p>Léa</p></a>
+                  <a href="https://www.linkedin.com/in/marguerite-cassier/" target="_blank"><p>Margue</p></a>
+              </div>
+          </div>
+          <div class="footer-right">
+                  <p>icons by fontawesome</p>
+                  <p>credits: marguéa</p>
+          </div>
+      </footer>
+      <script
+        src="https://kit.fontawesome.com/87c3556e07.js"
+        crossorigin="anonymous"
+      ></script>
+      <script>
+        var toggle = false;
+        document.getElementById("menu_toggle").style.display = "none";
+        document.getElementById("toggle").addEventListener("click", function () {
+          toggle = !toggle;
+          if (toggle) {
+            document.getElementById("menu_toggle").style.display = "block";
+          } else {
+            document.getElementById("menu_toggle").style.display = "none";
+          }
+        });
+        const info = [
+          {
+            name: "Curiosity",
+            mass: 899,
+            landingDate: "10/06/2012",
+            goals: "weather, geology, water, planetary habitability.",
+            funFact:
+              "it eyes capture high-resolution color pictures and videos. ",
+          },
+          {
+            name: "Opportunity",
+            mass: 899,
+            landingDate: "10/06/2012",
+            goals: "weather, geology, water, planetary habitability.",
+            funFact:
+              "it eyes capture high-resolution color pictures and videos. ",
+          },
+          {
+            name: "Spirit",
+            mass: 899,
+            landingDate: "10/06/2012",
+            goals: "weather, geology, water, planetary habitability.",
+            funFact:
+              "it eyes capture high-resolution color pictures and videos. ",
+          },
+          {
+            name: "Marg",
+            mass: 55,
+            landingDate: "14/06/2020",
+            goals: "Co-President of Mars",
+            funFact:
+              "Making her cry is illegal, and one risks the death penalty for that",
+          },
+          {
+            name: "Léa",
+            mass: 55,
+            landingDate: "14/06/2020",
+            goals: "Co-President of Mars",
+            funFact: "Invetor of the first ever Mars proof strawberry cheesecake",
+          },
+        ];
+        var choice = 0;
+        function setInfo(choice) {
+          console.log(info[choice].mass);
+          document.getElementById("name").innerHTML = info[choice].name;
+          document.getElementById("weight").innerHTML =
+            " " + info[choice].mass + " kg";
+          document.getElementById("date").innerHTML =
+            " " + info[choice].landingDate;
+          document.getElementById("goal").innerHTML = " " + info[choice].goals;
+          document.getElementById("fun").innerHTML = " " + info[choice].funFact;
+        }
+        document.getElementById("next").addEventListener("click", function () {
+          if (choice + 1 <= info.length) {
+            choice++;
+            setInfo(choice);
+          }
+        });
+        document.getElementById("prev").addEventListener("click", function () {
+          if (choice - 1 >= 0) {
+            choice--;
+            setInfo(choice);
+          }
+        });
+        setInfo(0);
+      </script>
     </body>
-</html>
+  </html>
+  
