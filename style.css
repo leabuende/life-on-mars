@@ -96,7 +96,7 @@ nav{
 
 /*Main page*/
 main{
-    height:100vh;
+    min-height:100vh;
     padding-top:80px;
 }
 .welcome{
@@ -162,6 +162,20 @@ main{
     display: flex;
     justify-content: center;
 }
+@media (max-width: 480px) {
+    .welcome h1{
+        font-family: 'Unica One', cursive;
+        font-size: 40px;
+        color:#FF9200;
+    }
+    .welcome p{
+        font-size: 12px;
+    }
+    .links{
+        display: none;
+    }
+  }
+
 /*Weather*/
 .card{
     margin-bottom: 20px;
@@ -234,11 +248,10 @@ main{
 /*Footer*/
 /*Footer*/
 footer{
-    bottom: 0;
+margin-top:20px;
+position: relative;
 }
-@media (max-height:600px){
-    footer { position: static; }
-}
+
 .footer-entire{
     width:100%;
     height:70px;
